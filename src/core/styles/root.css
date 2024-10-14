@@ -1,0 +1,222 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type='number'] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+.table {
+  @apply w-full;
+}
+
+.table thead tr th,
+.table tbody tr:not(:last-child) {
+  @apply border-b border-lightest3;
+}
+
+.table tr td,
+.table tr th {
+  @apply pb-3 pt-4;
+}
+
+.admin-dashboard .table tr td,
+.table tr th {
+  @apply pb-2 pt-3;
+}
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #373a47;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: #a90000;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+  padding: 0.8em;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.loader {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #2174bb;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.loader-white {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #fff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.progressVisualFull {
+  display: flex;
+  height: 8px;
+  border-radius: 24px;
+}
+
+.progressVisualPart {
+  border-radius: 24px;
+  transition: width 0.7s ease-in-out;
+}
+
+.number::-webkit-outer-spin-button,
+.number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.number[type='number'] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+/* CCS Loader */
+.spinner {
+  display: grid;
+  grid-template-columns: repeat(3, 20px);
+  grid-template-rows: repeat(3, 20px);
+  grid-gap: 30px;
+  justify-items: center;
+  align-items: center;
+}
+
+.square {
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
+  animation: scaleInOut 1s infinite;
+}
+
+@media screen and (max-width: 768px) {
+  .spinner {
+    grid-gap: 10px;
+  }
+
+  .square {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@keyframes scaleInOut {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+}
+
+/* RESET: react-modern-drawer */
+.EZDrawer__container {
+  background-color: transparent !important;
+}
+
+/* RESET: react-player */
+.react-player-reset iframe {
+  border-radius: 16px !important;
+}
+
+.react-player-reset div {
+  width: auto !important;
+  height: auto !important;
+}
+
+.reset-react-select-2 #react-select-17-listbox {
+  color: black !important;
+}
+
+input[type='checkbox'] {
+  transform: scale(1.5);
+  padding: 10px;
+}
+
+.css-18ui3pg-YouTubePlaylist {
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)) !important;
+  grid-gap: 0 2rem !important;
+}
